@@ -51,7 +51,7 @@ app.get('/', (req, res) => {
     //res.send('Bienvenue sur mon server ! ')
     res.render('home.hbs', {
         title: 'Home Page',
-        intro: 'Bienvenu sur le site de jean marc'
+        message: 'Bienvenu sur le site de jean marc'
     })
 })
 
