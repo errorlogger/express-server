@@ -61,6 +61,13 @@ app.get('/about', (req, res) => {
     });
 })
 
+app.get('/project', (req, res) => {
+    res.render('project.hbs', {
+        title: 'project page',
+        message: "Bienvenu sur mon portfolio"
+    });
+})
+
 app.get('/test/:name', (req, res) => {
 
     let name = req.params.name;
