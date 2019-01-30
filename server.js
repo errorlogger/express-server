@@ -57,7 +57,8 @@ app.get('/', (req, res) => {
 
 app.get('/about', (req, res) => {
     res.render('about.hbs', {
-        title: 'About page'
+        title: 'About page',
+        message: "Vous désirez des infos ?"
     });
 })
 
@@ -81,6 +82,8 @@ app.post('/test', (req, res) => {
 
     let fname = req.body.firstName;
     let name = req.body.name;
+
+    fname == '' || fname == undefined ? fname = "un inconnu" : fname = fname;
     res.render('test.hbs', {
         title: 'Test page',
         message: `vous êtes ${fname} ${name}`

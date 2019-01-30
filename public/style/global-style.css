@@ -31,3 +31,53 @@ a:hover {
     background: yellow;
     color: black;
 }
+
+.header, .login {
+    width: 100%;
+    text-align: center;
+}
+.header {
+    font-size: 2rem;
+    padding: 4rem;
+    background-color: #2245ff;
+}
+
+.login {
+    font-size: 1.5rem;
+    padding: 2rem;
+    background: linear-gradient(to right, #555, #999, #555);
+}
+
+.login__form {
+    border-radius: 20px;
+    border: 1px solid black;
+    background: #bbb;
+    width: 30%;
+    margin-left: 35%;
+}
+.login__form--input , input[type="submit"]{
+    border-radius: 10px;
+    border: 1px solid black;
+    height: 40px;
+    width: 96%;
+    margin: 2%;
+    text-align: center;
+}
+
+input[type="submit"]:focus {
+    outline:0;
+}
+input[type="submit"]{
+    background-color: blue;
+    color: white;
+}
+
+input[type="submit"]:hover{
+    background-color: rgb(229, 233, 5);
+    color: black;
+}
+
+input[type="submit"]:active{
+    background-color: rgb(233, 153, 5);
+    color: black;
+}

@@ -1,14 +1,14 @@
 {{> header}}
+<div class="login">
+    <form method="post" action="/test" class="login__form">
+        <label for="firstName" class="login__form--label">votre prénom</label>
+        <input type="text" id="firstName" name="firstName" class="login__form--input">
+        <label for="name" class="login__form--label">votre nom</label>
+        <input type="text" id="name" name="name" class="login__form--input">
+        <input type="submit" value="OK">
+    </form>
+</div>
 
-<h1>{{ upper title}}</h1>
-<p>{{message}}</p>
-<form method="post" action="/test">
-    <label for="firstName">votre prénom</label>
-    <input type="text" id="firstName" name="firstName">
-    <label for="name">votre nom</label>
-    <input type="text" id="name" name="name">
-    <input type="submit" value="OK">
-</form>
 
 
 {{> footer}}
