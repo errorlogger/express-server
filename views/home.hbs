@@ -2,8 +2,13 @@
 
 <h1>{{ upper title}}</h1>
 <p>{{intro}}</p>
+<form method="post" action="/test">
+    <label for="firstName">votre prénom</label>
+    <input type="text" id="firstName" name="firstName">
+    <label for="name">votre nom</label>
+    <input type="text" id="name" name="name">
+    <input type="submit" value="OK">
+</form>
+
 
 {{> footer}}
-</body>
-
-</html>

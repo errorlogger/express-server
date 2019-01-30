@@ -1,6 +1,11 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+const bodyParser = require('body-parser');
+
+//HEROKU PORT
+const port = process.env.PORT || 3000;
+
 var app = express();
 
 //indique le repertoire des composants réutilisables
@@ -36,6 +41,8 @@ app.use((req, res, next) => {
     }
 })
 
+app.use(bodyParser.urlencoded({ extended: false }))
+
 app.use(express.static(__dirname + "/public"));
 
 
@@ -54,12 +61,31 @@ app.get('/about', (req, res) => {
     });
 })
 
+app.get('/test/:name', (req, res) => {
+
+    let name = req.params.name;
+    res.render('test.hbs', {
+        title: 'Test page',
+        message: `vous êtes ${name}`
+    });
+})
+
+app.post('/test', (req, res) => {
+
+    let fname = req.body.firstName;
+    let name = req.body.name;
+    res.render('test.hbs', {
+        title: 'Test page',
+        message: `vous êtes ${fname} ${name}`
+    });
+})
+
 app.get('/bad', (req, res) => {
     res.send({
         errorMessage: "une erreur est survenue !"
     })
 })
 
-app.listen(3000, "localhost", () => {
-    console.log("le server est lancé");
+app.listen(port, "localhost", () => {
+    console.log("le server est lancé sur le port : " + port);
 });
