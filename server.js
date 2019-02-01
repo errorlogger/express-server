@@ -96,6 +96,17 @@ app.get('/bad', (req, res) => {
     })
 })
 
+app.get("/users", (req, res) => {
+    let userArray = [
+        { name: 'jean marc', age: 46 },
+        { name: 'didier', age: 51 },
+        { name: 'erine', age: 8 }
+    ];
+
+    res.status(324).send(userArray);
+})
+
 app.listen(port, () => {
     console.log("le server est lancé sur le port : " + port);
 });
+module.exports.app = app;
